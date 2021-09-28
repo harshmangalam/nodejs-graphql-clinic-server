@@ -29,6 +29,25 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  PatientInput: { // input type
+    address?: string | null; // String
+    age: number; // Int!
+    cfId: number; // Int!
+    city?: string | null; // String
+    dob: NexusGenScalars['Date']; // Date!
+    email?: string | null; // String
+    gender: NexusGenEnums['Gender']; // Gender!
+    height?: number | null; // Int
+    maritalStatus: NexusGenEnums['MaritalStatus']; // MaritalStatus!
+    medicineId: number; // Int!
+    name: string; // String!
+    occupation?: string | null; // String
+    pincode?: string | null; // String
+    reffred?: string | null; // String
+    state?: string | null; // String
+    telephone?: string | null; // String
+    weight?: number | null; // Int
+  }
 }
 
 export interface NexusGenEnums {
@@ -83,7 +102,8 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnu
 
 export interface NexusGenFieldTypes {
   Mutation: { // field return type
-    createPatientData: NexusGenRootTypes['Patient'] | null; // Patient
+    createPatientData: NexusGenRootTypes['Patient']; // Patient!
+    removePatientData: boolean; // Boolean!
   }
   Patient: { // field return type
     address: string | null; // String
@@ -114,6 +134,7 @@ export interface NexusGenFieldTypes {
 export interface NexusGenFieldTypeNames {
   Mutation: { // field return type name
     createPatientData: 'Patient'
+    removePatientData: 'Boolean'
   }
   Patient: { // field return type name
     address: 'String'
@@ -142,6 +163,14 @@ export interface NexusGenFieldTypeNames {
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    createPatientData: { // args
+      patientInput?: NexusGenInputs['PatientInput'] | null; // PatientInput
+    }
+    removePatientData: { // args
+      id: number; // Int!
+    }
+  }
 }
 
 export interface NexusGenAbstractTypeMembers {
@@ -152,7 +181,7 @@ export interface NexusGenTypeInterfaces {
 
 export type NexusGenObjectNames = keyof NexusGenObjects;
 
-export type NexusGenInputNames = never;
+export type NexusGenInputNames = keyof NexusGenInputs;
 
 export type NexusGenEnumNames = keyof NexusGenEnums;
 

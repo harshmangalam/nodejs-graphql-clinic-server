@@ -21,7 +21,8 @@ enum MaritalStatus {
 }
 
 type Mutation {
-  createPatientData: Patient
+  createPatientData(patientInput: PatientInput): Patient!
+  removePatientData(id: Int!): Boolean!
 }
 
 type Patient {
@@ -38,6 +39,26 @@ type Patient {
   maritalStatus: MaritalStatus
   medicineId: Int
   name: String
+  occupation: String
+  pincode: String
+  reffred: String
+  state: String
+  telephone: String
+  weight: Int
+}
+
+input PatientInput {
+  address: String
+  age: Int!
+  cfId: Int!
+  city: String
+  dob: Date!
+  email: String
+  gender: Gender!
+  height: Int
+  maritalStatus: MaritalStatus!
+  medicineId: Int!
+  name: String!
   occupation: String
   pincode: String
   reffred: String

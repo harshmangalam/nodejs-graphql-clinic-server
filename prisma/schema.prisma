@@ -19,16 +19,16 @@ model patient {
   age           Int
   dob           DateTime
   gender        Gender        @default(MALE)
-  address       String
-  city          String
-  state         String
-  pincode       String
-  telephone     String
-  email         String
-  occupation    String
-  height        Int
-  weight        Int
-  reffred       String
+  address       String?
+  city          String?
+  state         String?
+  pincode       String?
+  telephone     String?
+  email         String?
+  occupation    String?
+  height        Int?
+  weight        Int?
+  reffred       String?
   maritalStatus MaritalStatus
 
 }
