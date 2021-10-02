@@ -52,10 +52,10 @@ export const PatientInput = inputObjectType({
 export const Patient = objectType({
   name: "Patient",
   definition(t) {
-    t.int("cfId");
-    t.int("id");
+    t.nonNull.int("cfId");
+    t.nonNull.int("id");
     t.date("createdAt");
-    t.int("medicineId");
+    t.nonNull.int("medicineId");
     t.string("name");
     t.int("age");
     t.date("dob");
@@ -87,7 +87,6 @@ export const PatientMutation = extendType({
         patientInput: PatientInput,
       },
       async resolve(_root, { patientInput }, { db }: Context) {
-        console.log(patientInput);
         const patient = await db.patient.create({
           data: patientInput,
         });

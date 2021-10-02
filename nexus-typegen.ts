@@ -69,16 +69,16 @@ export interface NexusGenObjects {
   Patient: { // root type
     address?: string | null; // String
     age?: number | null; // Int
-    cfId?: number | null; // Int
+    cfId: number; // Int!
     city?: string | null; // String
     createdAt?: NexusGenScalars['Date'] | null; // Date
     dob?: NexusGenScalars['Date'] | null; // Date
     email?: string | null; // String
     gender?: NexusGenEnums['Gender'] | null; // Gender
     height?: number | null; // Int
-    id?: number | null; // Int
+    id: number; // Int!
     maritalStatus?: NexusGenEnums['MaritalStatus'] | null; // MaritalStatus
-    medicineId?: number | null; // Int
+    medicineId: number; // Int!
     name?: string | null; // String
     occupation?: string | null; // String
     pincode?: string | null; // String
@@ -108,16 +108,16 @@ export interface NexusGenFieldTypes {
   Patient: { // field return type
     address: string | null; // String
     age: number | null; // Int
-    cfId: number | null; // Int
+    cfId: number; // Int!
     city: string | null; // String
     createdAt: NexusGenScalars['Date'] | null; // Date
     dob: NexusGenScalars['Date'] | null; // Date
     email: string | null; // String
     gender: NexusGenEnums['Gender'] | null; // Gender
     height: number | null; // Int
-    id: number | null; // Int
+    id: number; // Int!
     maritalStatus: NexusGenEnums['MaritalStatus'] | null; // MaritalStatus
-    medicineId: number | null; // Int
+    medicineId: number; // Int!
     name: string | null; // String
     occupation: string | null; // String
     pincode: string | null; // String

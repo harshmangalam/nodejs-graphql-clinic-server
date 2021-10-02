@@ -28,16 +28,16 @@ type Mutation {
 type Patient {
   address: String
   age: Int
-  cfId: Int
+  cfId: Int!
   city: String
   createdAt: Date
   dob: Date
   email: String
   gender: Gender
   height: Int
-  id: Int
+  id: Int!
   maritalStatus: MaritalStatus
-  medicineId: Int
+  medicineId: Int!
   name: String
   occupation: String
   pincode: String
